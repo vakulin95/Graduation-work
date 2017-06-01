@@ -1,0 +1,137 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.4 (15/5/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com) with extensive modifications by
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[14pt]{article}
+
+%\usepackage{blindtext}
+
+\usepackage{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+%\usepackage{times}
+\linespread{1.5}
+
+\usepackage[left=3cm,right=1cm,top=1.5cm,bottom=2cm]{geometry}
+%\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\usepackage{graphicx, amsmath}
+\numberwithin{figure}{section}
+\graphicspath{{images/}}
+\usepackage{amsfonts}
+
+\numberwithin{equation}{section}
+
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{listings}
+\lstloadlanguages{C,[ANSI]C++}%,Clean,make,Fortran}%Загружаемые языки
+\lstset{
+  language=C,                % choose the language of the code
+  numbers=left,                   % where to put the line-numbers
+  stepnumber=1,                   % the step between two line-numbers.
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
+  %title=\lstname,                 % show the filename of files included with \lstinputlisting;
+}
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+%\usepackage{titlesec} % Allows customization of titles
+% \renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+% \renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+% \titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+% \titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{titlepage}
+
+\thispagestyle{empty}
+
+\centerline{МИНОБРНАУКИ РОССИИ}
+\centerline{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ}
+\centerline{УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ}
+\centerline{«ВОРОНЕЖСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ»}
+
+\vspace{0.3cm}
+
+\centerline{Факультет компьютерных наук}
+\centerline{Кафедра цифровых технологий}
+
+\vspace{1cm}
+
+\centerline{«Применение сверточных нейронных сетей к задаче }
+\centerline{классификации трехмерных моделей»}
+
+\vspace{1cm}
+
+\centerline{ВКР Бакалаврская работа}
+\centerline{02.03.01 Математика и компьютерные науки}
+\centerline{Распределенные системы и искусственный интеллект}
+
+\vfill
+
+\begin{tabbing}
+ооооооооооооооо	\=	----------------------	\kill
+Зав. кафедрой	\> 	\rule[0mm]{7cm}{0,3mm}	С.Д. Кургалин \\
+Обучающийся 	\> 	\rule[0mm]{7cm}{0,3mm}	А.А. Вакулин
+\end{tabbing}
+
+\begin{tabbing}
+ооооооооооооооо	\=	----------------------	\kill
+Руководители	\> 	\rule[0mm]{7cm}{0,3mm}  А.А. Крыловецкий \\
+				\> 	\rule[0mm]{7cm}{0,3mm}  И.С. Черников
+\end{tabbing}
+
+\vfill
+
+\centerline{Воронеж, 2017}
+\clearpage
+\end{titlepage}
+
+\end{document}
