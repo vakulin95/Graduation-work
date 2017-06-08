@@ -21,12 +21,13 @@
 
 \documentclass[14pt]{article}
 
-%\usepackage{blindtext}
+\usepackage{cyrtimes}
 
 \usepackage{extsizes}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
+\usepackage{indentfirst}
 
 %\usepackage{times}
 \linespread{1.5}
@@ -101,13 +102,13 @@
 %----------------------------------------------------------------------------------------
 
 \begin{document}
+
 \begin{titlepage}
 
 \thispagestyle{empty}
+
 \newgeometry{margin=2cm}
 \center
-% \textsc{МИНОБРНАУКИ РОССИИ}\\
-% \textbf{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ\\<<ВОРОНЕЖСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ>>}
 {\small МИНОБРНАУКИ РОССИИ}\\  \!  \!  \!
 {\small \textbf{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ}}\\ \!  \!  \!
 {\small \textbf{ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ}}\\ \!  \!
@@ -156,8 +157,9 @@
 %\setcounter{page}{2} % начать нумерацию с номера два
 
 %% ЗАДАНИЕ НА ВЫПОЛНЕНИЕ
-\newpage\thispagestyle{empty}
-\addtocounter{page}{1}
+\newpage
+
+\thispagestyle{empty}
 \newgeometry{margin=2cm}
 \begin{spacing}{1.2}
 {
@@ -215,7 +217,8 @@ $~$Кафедра цифровых технологий}\\
 \end{spacing}
 
 %% РЕФЕРАТ
-\newpage\thispagestyle{empty}
+\newpage%\thispagestyle{empty}
+\addtocounter{page}{1}
 \begin{center}
 {\large \textbf{Реферат}}
 \end{center}
@@ -544,13 +547,11 @@ $~$Кафедра цифровых технологий}\\
 
 Для решения задачи определения более сложных признаков из сырых массивов пикселов предлагается использовать отдельный тип нейронных сетей, называемых сверточными.
 
-Свёрточная нейронная сеть (далее СНС) была представлена в 1998 году французским исследователем Яном Лекуном (Yann LeCun)%\cite{LeCun}
-, как развитие модели неокогнитрон \cite{Fukushima}. Архитектура данного типа нейронных сетей схожа с некоторыми особенностями зрительной коры, в которой имеются простые клетки, реагирующие на прямые линии под разными углами, и сложные клетки, реакция которых связана с активацией определённого набора простых клеток.
+Свёрточная нейронная сеть (далее СНС) была представлена в 1998 году французским исследователем Яном Лекуном (Yann LeCun) \cite{LeCun}, как развитие модели неокогнитрон \cite{Fukushima}. Архитектура данного типа нейронных сетей схожа с некоторыми особенностями зрительной коры, в которой имеются простые клетки, реагирующие на прямые линии под разными углами, и сложные клетки, реакция которых связана с активацией определённого набора простых клеток.
 
 Таким образом, идея свёрточных нейронных сетей заключается в чередовании свёрточных слоев (англ. convolution layers) и субдискретизирующих слоев (англ. subsampling/pooling layers). Для обучения используются градиентные методы, чаще всего метод обратного распространения ошибки.
 
-Название архитектура сети получила из-за наличия операции свёртки%\cite{Borisov1}
-, суть которой в том, что каждый фрагмент изображения умножается на матрицу (ядро свёртки) поэлементно, а результат суммируется и записывается в аналогичную позицию выходного изображения.
+Название архитектура сети получила из-за наличия операции свёртки \cite{Borisov1}, суть которой в том, что каждый фрагмент изображения умножается на матрицу (ядро свёртки) поэлементно, а результат суммируется и записывается в аналогичную позицию выходного изображения.
 
 \begin{equation}
 	(f * g)[m, n] = \sum_{k,l}{f[m - k, n - l] \cdot g[k, l]}
@@ -592,8 +593,7 @@ $~$Кафедра цифровых технологий}\\
 	\end{center}
 \end{figure}
 
-Первые два типа слоёв (convolutional, subsampling/pooling), чередуясь между собой, формируют входной вектор признаков для многослойного перцептрона (fully connected MLP).
-% Сеть можно обучать с помощью градиентных методов \cite{Borisov2}.
+Первые два типа слоёв (convolutional, subsampling/pooling), чередуясь между собой, формируют входной вектор признаков для многослойного перцептрона (fully connected MLP). Сеть можно обучать с помощью градиентных методов \cite{Borisov2}.
 
 Далее рассмотрим подробнее каждый из типов слоев СНС.
 
@@ -799,17 +799,20 @@ $~$Кафедра цифровых технологий}\\
     \bibitem{Spin}
 	Johnson A.E. Spin-Images: A Representation for 3-D Surface Matching, Ph. D. Thesis // Carnegie Mellon University, 1997, 288 p.
 
-	% \bibitem{LeCun}
-	% LeCun, Yann. "LeNet-5, convolutional neural networks" –-- http://yann.lecun.com/exdb/lenet/
+	\bibitem{LeCun}
+	LeCun, Yann. "LeNet-5, convolutional neural networks": [Сайт].- 2017. - URL: http://yann.lecun.com/exdb/lenet/ (дата обращения 4.11.16)
 
 	\bibitem{Fukushima}
 	Fukushima Kunihiko Neocognitron: A Self - organizing Neural Network Model for a Mechanism of Pattern Recognition Unaffected by Shift in Position. // Biological Cybernetics 1980 36 (4)
-    %--
-	% \bibitem{Borisov1}
-	% Борисов Е. Базовые методы обработки изображений. // http://mechanoid.kiev.ua/cv-base.html
+
+	\bibitem{Borisov1}
+	Борисов Е. Базовые методы обработки изображений.: [Сайт].- 2017. - URL: http://mechanoid.kiev.ua/cv-base.html (дата обращения 17.04.17)
+
+    \bibitem{Borisov2}
+	Борисов Е. О методах обучения многослойных нейронных сетей прямого распространения.: [Сайт].- 2017. - URL: http://mechanoid.kiev.ua/neural-net-backprop.html (дата обращения 4.11.16)
 
 	\bibitem{Stanford}
-	CS231n: Convolutional Neural Networks for Visual Recognition: [Электронный ресурс].- 2017. - URL: http://cs231n.github.io (дата обращения 23.11.2016).
+	CS231n: Convolutional Neural Networks for Visual Recognition: [Электронный ресурс].- 2017. - URL: http://cs231n.github.io (дата обращения 13.03.2017).
 
 	\bibitem{MNBackProb}
     Michael Neilsen. Neural Networks and Deep Learning / Michael Neilsen [Электронный ресурс].- 2017. - URL: http://neuralnetworksanddeeplearning.com (дата обращения 23.04.2017).
