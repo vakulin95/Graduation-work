@@ -20,13 +20,20 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[14pt]{article}
+\usepackage[english, russian]{babel}
+\usepackage{fontspec}
+% \setmainfont{Times New Roman}
 
-\usepackage{cyrtimes}
+\setromanfont{Times New Roman}
+\setsansfont{Arial}
+
+% \usepackage{cyrtimes}
 
 \usepackage{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
+% \usepackage[T2A]{fontenc}
+%
+% \usepackage[utf8]{inputenc}
+
 \usepackage{indentfirst}
 
 %\usepackage{times}
@@ -90,10 +97,6 @@
 \titleformat{\subsection}[block]{\large\bfseries}{\thesubsection}{1ex}{}
 \titleformat{\subsubsection}[block]{\normalsize\bfseries}{\thesubsubsection}{1ex}{}
 
-% \titleformat{\subsection}[block]{\large\bfseries\centering}{\thesubsection}{1ex}{}
-% \titleformat{\subsubsection}[block]{\normalsize\bfseries\centering}{\thesubsubsection}{1ex}{}
-
-
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
@@ -102,6 +105,7 @@
 %----------------------------------------------------------------------------------------
 
 \begin{document}
+{\sffamily
 
 \begin{titlepage}
 
@@ -109,44 +113,49 @@
 
 \newgeometry{margin=2cm}
 \center
+
 {\small МИНОБРНАУКИ РОССИИ}\\  \!  \!  \!
-{\small \textbf{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ}}\\ \!  \!  \!
-{\small \textbf{ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ}}\\ \!  \!
-{\small  \textbf{ВЫСШЕГО ОБРАЗОВАНИЯ}}\\ \!  \!
+{\footnotesize \textbf{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ}}\\ \!  \!  \!
+{\footnotesize  \textbf{ВЫСШЕГО ОБРАЗОВАНИЯ}}\\ \!  \!
 {\small \textbf{<<ВОРОНЕЖСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ>>}}\\ \!  \!
 
 \vspace{0.3cm}
 
-\centerline{Факультет компьютерных наук}
-\centerline{Кафедра цифровых технологий}
+{\small
 
-\vspace{1cm}
+    \centerline{Факультет \emph{компьютерных наук}}
+    \centerline{Кафедра \emph{цифровых технологий}}
 
-\centerline{Применение сверточных нейронных сетей к задаче }
-\centerline{классификации трехмерных моделей}
+    \vspace{1cm}
 
-\vspace{1cm}
+    \centerline{\emph{Применение сверточных нейронных сетей к задаче }}
+    \centerline{\emph{классификации трехмерных моделей}}
 
-\centerline{ВКР Бакалаврская работа}
-\centerline{02.03.01 Математика и компьютерные науки}
-\centerline{Распределенные системы и искусственный интеллект}
+    \vspace{1cm}
 
-\vfill
-\begin{flushleft}
-\textrm{Допущено к защите в ГЭК \rule[0mm]{5mm}{0,3mm} . \rule[0mm]{15mm}{0,3mm} . 2017}
-\end{flushleft}
-\begin{tabbing}
-ооооооооооооооо	\=	----------------------	\kill
-Зав. кафедрой	\> 	\rule[0mm]{4cm}{0,3mm}	\textit{С.Д. Кургалин, д. ф.-м. н., профессор} \\
-Обучающийся 	\> 	\rule[0mm]{4cm}{0,3mm}	\textit{А.А. Вакулин, 4 курс, д/о}             \\
-Руководители	\> 	\rule[0mm]{4cm}{0,3mm}  \textit{А.А. Крыловецкий, к. ф.-м. н., доцент} \\
-				\> 	\rule[0mm]{4cm}{0,3mm}  \textit{И.С. Черников, к. ф.-м. н., ассистент}
-\end{tabbing}
+    \centerline{ВКР \emph{Бакалаврская работа}}
+    \centerline{\emph{02.03.01 Математика и компьютерные науки}}
+    \centerline{\emph{Распределенные системы и искусственный интеллект}}
 
-\vfill
+    \vfill
+    \begin{flushleft}
+    \raggedright{Допущено к защите в ГЭК}
+    \end{flushleft}
+    \begin{tabbing}
+    ооооооооооооооо	\=	----------------------	\kill
+    Зав. кафедрой	\> 	\rule[0mm]{4cm}{0,3mm}	\emph{С.Д. Кургалин, д. ф.-м. н., профессор } \rule[0mm]{5mm}{0,3mm} . \rule[0mm]{5mm}{0,3mm} . 2017\\
+    Обучающийся 	\> 	\rule[0mm]{4cm}{0,3mm}	\emph{А.А. Вакулин, 4 курс, д/о}             \\
+    Руководители	\> 	\rule[0mm]{4cm}{0,3mm}  \emph{А.А. Крыловецкий, к. ф.-м. н., доцент} \\
+    				\> 	\rule[0mm]{4cm}{0,3mm}  \emph{И.С. Черников, к. ф.-м. н., ассистент}
+    \end{tabbing}
 
-\centerline{Воронеж 2017}
+    \vfill
+
+    \centerline{Воронеж 2017}
+
+}
 \clearpage
+
 \end{titlepage}
 
 %----------------------------------------------------------------------------------------
@@ -164,57 +173,74 @@
 \begin{spacing}{1.2}
 {
 \begin{center}
-{\small МИНОБРНАУКИ РОССИИ}\\  \!  \!  \!
-{\small \textbf{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ}}\\ \!  \!  \!
-{\small \textbf{ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ}}\\ \!  \!
-{\small  \textbf{ВЫСШЕГО ОБРАЗОВАНИЯ}\\ \!  \!
-\textbf{<<ВОРОНЕЖСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ>>}\\ \!  \!
-Факультет компьютерных наук\\  \!  \! \!
-$~$Кафедра цифровых технологий}\\
-\vspace{0.1cm}
-\end{center}
-\begin{flushright} \!  \!  \! \!
-{\small \textbf{УТВЕРЖДАЮ}\\
-заведующий кафедрой\\
- $\underset{\text{\emph{подпись}}}{\underline{\hspace{0.15\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\hspace{0.3\textwidth}}}$}
-\end{flushright}
-\begin{center}
-{\small \textbf{ЗАДАНИЕ \\
-НА ВЫПОЛНЕНИЕ ВЫПУСКНОЙ КВАЛИФИКАЦИОННОЙ РАБОТЫ\\
-ОБУЧАЮЩЕГОСЯ} $\underset{\text{\emph{фамилия, имя, отчество}}}{\underline{\hspace{0.69\textwidth}}}$}
-\end{center}\! \! \!
-\vspace{0.1cm}
-{\small 1. Тема работы \underline{\phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa}}, утверждена решением ученого совета \underline{\phantom{aaaaaaaaaaaaaaaaaaaaaaa}} факультета от \underline{\phantom{aaa}}.\underline{\phantom{aaa}}.20\underline{\phantom{aaa}}\\
-2. { Направление подготовки $\underset{\text{\emph{шифр, наименование}}}{\underline{\hspace{0.67\textwidth}}}$\\
-3. Срок сдачи студентом законченной работы \underline{\phantom{aaa}}.\underline{\phantom{aaa}}.20\underline{\phantom{aaa}}\\
-4. Календарный план:}\\
-\begin{tabular}[t]{|p{1em}|p{22em}|p{9em}|p{6em}|}
-\hline
-{\small	№} & {\small Структура ВКР} & {\small Сроки выполнения} & {\small Примечание}\\
-\hline
-	{\small	$1$} & {Введение}                                              & {9.10.16} & {} \\
-\hline
-	{\small	$2$} & {Глобальные дескрипторы поверхности}                    & {12.11.16} & {} \\
-\hline
-	{\small	$3$} &{Алгоритм контроля разрешения трехмерных объектов}       & {23.01.17} & {} \\
-\hline
-	{\small	$4$} &{Сверточные нейронные сети}                              & {14.02.17} & {} \\
-\hline
-	{\small	$5$} &{Реализация системы классификации трехмерных моделей}    & {20.04.17} & {} \\
-\hline
-	{\small	$6$} &{Заключение}                                             & {16.05.17} & {} \\
-\hline
-\end{tabular}\! \! \! \!
-\begin{flushleft}
-\vspace{0.4cm}
-{\small
-Обучающийся $~~~~~~~~\underset{\text{\emph{подпись}}}{\underline{\hspace{0.2\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\hspace{0.4\textwidth}}}$\\
-\vspace{0.4cm}
-Руководитель $~~~~~~~~\underset{\text{\emph{подпись}}}{\underline{\hspace{0.2\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\hspace{0.4\textwidth}}}$}
-\end{flushleft}\! \! \! \! \! \! \! \!
 
-}}
+{\small МИНОБРНАУКИ РОССИИ}\\  \!  \!  \!
+{\footnotesize \textbf{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ}}\\ \!  \!  \!
+{\footnotesize  \textbf{ВЫСШЕГО ОБРАЗОВАНИЯ}}\\ \!  \!
+{\small \textbf{<<ВОРОНЕЖСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ>>}}\\ \!  \!
+
+{\small
+    \vspace{0.3cm}
+
+    \centerline{Факультет \emph{компьютерных наук}}
+    \centerline{Кафедра \emph{цифровых технологий}}
+
+    \vspace{0.3cm}
+}
+\end{center}
+{\small
+    \begin{flushright} \!  \!  \! \!
+    {\small УТВЕРЖДАЮ\\
+    заведующий кафедрой\\
+    $\underset{\text{\emph{подпись}}}{\underline{\hspace{0.15\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\hspace{0.20\textwidth}}}$}\\
+    \vspace{0.1cm}
+    \rule[0mm]{5mm}{0,3mm} . \rule[0mm]{5mm}{0,3mm} . 2017\\
+    \end{flushright}
+    \begin{center}
+    {\small \textbf{ЗАДАНИЕ \\
+    НА ВЫПОЛНЕНИЕ ВЫПУСКНОЙ КВАЛИФИКАЦИОННОЙ РАБОТЫ\\
+    ОБУЧАЮЩЕГОСЯ} $\underset{\text{\emph{фамилия, имя, отчество}}}{\underline{\hspace{0.69\textwidth}}}$}
+    \end{center}\! \! \!
+}
+
+\vspace{0.1cm}
+
+{\footnotesize
+
+    {\noindent 1. Тема работы \underline{\phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa}}, утверждена решением ученого совета \underline{\phantom{aaaaaaaaaaaaaaaaaaaaaaa}} факультета от \underline{\phantom{aaa}}.\underline{\phantom{aaa}}.20\underline{\phantom{aaa}}\\
+    2. { Направление подготовки $\underset{\text{\emph{шифр, наименование}}}{\underline{\hspace{0.67\textwidth}}}$\\
+    3. Срок сдачи студентом законченной работы \underline{\phantom{aaa}}.\underline{\phantom{aaa}}.20\underline{\phantom{aaa}}\\
+    4. Календарный план:}\\
+    \begin{tabular}[t]{|p{1em}|p{22em}|p{9em}|p{6em}|}
+    \hline
+    {№} & {Структура ВКР} & {Сроки выполнения} & {Примечание}\\
+    \hline
+    	{1} & {Введение}                                              & {9.10.16} & {} \\
+    \hline
+    	{2} & {Глобальные дескрипторы поверхности}                    & {12.11.16} & {} \\
+    \hline
+    	{3} &{Алгоритм контроля разрешения трехмерных объектов}       & {23.01.17} & {} \\
+    \hline
+    	{4} &{Сверточные нейронные сети}                              & {14.02.17} & {} \\
+    \hline
+    	{5} &{Реализация системы классификации трехмерных моделей}    & {20.04.17} & {} \\
+    \hline
+    	{6} &{Заключение}                                             & {16.05.17} & {} \\
+    \hline
+    \end{tabular}\! \! \! \!
+    \begin{flushleft}
+    \vspace{0.4cm}
+    {
+    Обучающийся $~~~~~~~~\underset{\text{\emph{подпись}}}{\underline{\hspace{0.2\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\hspace{0.4\textwidth}}}$\\
+    \vspace{0.4cm}
+    Руководитель $~~~~~~~~\underset{\text{\emph{подпись}}}{\underline{\hspace{0.2\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\hspace{0.4\textwidth}}}$}
+    \end{flushleft}\! \! \! \! \! \! \! \!
+
+    }}
+}
 \end{spacing}
+}
+
 
 %% РЕФЕРАТ
 \newpage%\thispagestyle{empty}
