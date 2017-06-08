@@ -59,7 +59,7 @@
 \setlist[itemize]{noitemsep} % Make itemize lists more compact
 
 \usepackage{listings}
-\lstloadlanguages{C,[ANSI]C++}%,Clean,make,Fortran}%Загружаемые языки
+\lstloadlanguages{C,[ANSI]C++,Matlab}%,Clean,make,Fortran}%Загружаемые языки
 \lstset{
   language=C,                % choose the language of the code
   numbers=left,                   % where to put the line-numbers
@@ -71,8 +71,10 @@
   showtabs=false,                 % show tabs within strings adding particular underscores
   tabsize=2,                      % sets default tabsize to 2 spaces
   captionpos=b,                   % sets the caption-position to bottom
-  breaklines=true,                % sets automatic line breaking
-  breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
+  breaklines=false,                % sets automatic line breaking
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  frame=none,
+  basicstyle=\footnotesize
   %title=\lstname,                 % show the filename of files included with \lstinputlisting;
 }
 
@@ -93,8 +95,8 @@
 \onehalfspacing
 
 \usepackage{titlesec}
-\titleformat{\section}[block]{\Large\bfseries\centering}{\thesection}{1ex}{}
-\titleformat{\subsection}[block]{\large\bfseries}{\thesubsection}{1ex}{}
+\titleformat{\section}[block]{\normalsize\bfseries\centering}{\thesection}{1ex}{}
+\titleformat{\subsection}[block]{\normalsize\bfseries}{\thesubsection}{1ex}{}
 \titleformat{\subsubsection}[block]{\normalsize\bfseries}{\thesubsubsection}{1ex}{}
 
 %----------------------------------------------------------------------------------------
@@ -124,6 +126,7 @@
 {\small
 
     \centerline{Факультет \emph{компьютерных наук}}
+    \vspace{0.3cm}
     \centerline{Кафедра \emph{цифровых технологий}}
 
     \vspace{1cm}
@@ -180,10 +183,10 @@
 {\small \textbf{<<ВОРОНЕЖСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ>>}}\\ \!  \!
 
 {\small
-    \vspace{0.3cm}
+    %\vspace{0.3cm}
 
-    \centerline{Факультет \emph{компьютерных наук}}
-    \centerline{Кафедра \emph{цифровых технологий}}
+    \centerline{Факультет компьютерных наук}
+    \centerline{Кафедра цифровых технологий}
 
     \vspace{0.3cm}
 }
@@ -192,14 +195,14 @@
     \begin{flushright} \!  \!  \! \!
     {\small УТВЕРЖДАЮ\\
     заведующий кафедрой\\
-    $\underset{\text{\emph{подпись}}}{\underline{\hspace{0.15\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\hspace{0.20\textwidth}}}$}\\
+    $\underset{\text{\emph{подпись}}}{\underline{\hspace{0.15\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\text{Кургалин С.Д.,}}}$}\\
     \vspace{0.1cm}
     \rule[0mm]{5mm}{0,3mm} . \rule[0mm]{5mm}{0,3mm} . 2017\\
     \end{flushright}
     \begin{center}
     {\small \textbf{ЗАДАНИЕ \\
     НА ВЫПОЛНЕНИЕ ВЫПУСКНОЙ КВАЛИФИКАЦИОННОЙ РАБОТЫ\\
-    ОБУЧАЮЩЕГОСЯ} $\underset{\text{\emph{фамилия, имя, отчество}}}{\underline{\hspace{0.69\textwidth}}}$}
+    ОБУЧАЮЩЕГОСЯ} $\underset{\text{\emph{фамилия, имя, отчество}}}{\underline{\textbf{ВАКУЛИНА АРТЁМА АЛЕКСАНДРОВИЧА}}}$}
     \end{center}\! \! \!
 }
 
@@ -207,33 +210,36 @@
 
 {\footnotesize
 
-    {\noindent 1. Тема работы \underline{\phantom{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa}}, утверждена решением ученого совета \underline{\phantom{aaaaaaaaaaaaaaaaaaaaaaa}} факультета от \underline{\phantom{aaa}}.\underline{\phantom{aaa}}.20\underline{\phantom{aaa}}\\
-    2. { Направление подготовки $\underset{\text{\emph{шифр, наименование}}}{\underline{\hspace{0.67\textwidth}}}$\\
+    {\noindent 1. Тема работы \underline{<<Применение сверточных нейронных сетей к задаче классификации трехмерных моделей>>}, утверждена решением ученого совета факультета компьютерных наук от \underline{\phantom{aaa}}.\underline{\phantom{aaa}}.20\underline{\phantom{aaa}}\\
+    2. { Направление подготовки / специальность $\underset{\text{\emph{шифр, наименование}}}{\underline{\text{02.03.01 Математика и компьютерные науки}}}$\\
     3. Срок сдачи студентом законченной работы \underline{\phantom{aaa}}.\underline{\phantom{aaa}}.20\underline{\phantom{aaa}}\\
-    4. Календарный план:}\\
-    \begin{tabular}[t]{|p{1em}|p{22em}|p{9em}|p{6em}|}
+    4. Календарный план: (строится в соответствии со структурой ВКР)}\\
+    % \begin{tabular}[t]{|p{1em}|p{29em}|p{9em}|p{6em}|}
+    \begin{tabular}[t]{|c|l|c|c|}
     \hline
-    {№} & {Структура ВКР} & {Сроки выполнения} & {Примечание}\\
+        {№} & {\hspace{0.18\textwidth} Структура ВКР} & {Сроки выполнения} & {Примечание} \\
     \hline
-    	{1} & {Введение}                                              & {9.10.16} & {} \\
+    	{1} & {Введение}                                              & {09.10.2016} & {} \\
     \hline
-    	{2} & {Глобальные дескрипторы поверхности}                    & {12.11.16} & {} \\
+    	{2} & {Глава 1. Глобальные дескрипторы поверхности}                    & {12.11.2016} & {} \\
     \hline
-    	{3} &{Алгоритм контроля разрешения трехмерных объектов}       & {23.01.17} & {} \\
+    	{3} &{Глава 2. Алгоритм контроля разрешения трехмерных объектов}       & {23.01.2017} & {} \\
     \hline
-    	{4} &{Сверточные нейронные сети}                              & {14.02.17} & {} \\
+    	{4} &{Глава 3. Сверточные нейронные сети}                              & {14.02.2017} & {} \\
     \hline
-    	{5} &{Реализация системы классификации трехмерных моделей}    & {20.04.17} & {} \\
+    	{5} &{Глава 4. Реализация системы классификации 3D - моделей}    & {20.03.2017} & {} \\
     \hline
-    	{6} &{Заключение}                                             & {16.05.17} & {} \\
+    	{6} &{Заключение}                                             & {25.04.2017} & {} \\
     \hline
     \end{tabular}\! \! \! \!
     \begin{flushleft}
     \vspace{0.4cm}
     {
-    Обучающийся $~~~~~~~~\underset{\text{\emph{подпись}}}{\underline{\hspace{0.2\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\hspace{0.4\textwidth}}}$\\
+    Обучающийся$~~~~~~~\underset{\text{\emph{подпись}}}{\underline{\hspace{0.2\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\text{Вакулин А.А.}\hspace{0.055\textwidth}}}$\\
     \vspace{0.4cm}
-    Руководитель $~~~~~~~~\underset{\text{\emph{подпись}}}{\underline{\hspace{0.2\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\hspace{0.4\textwidth}}}$}
+    Руководители$~~~~~~~\underset{\text{\emph{подпись}}}{\underline{\hspace{0.2\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\text{Крыловецкий А.А.}\hspace{0.01\textwidth}}}$\\
+    \vspace{0.2cm}
+    $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\underset{\text{\emph{подпись}}}{\underline{\hspace{0.2\textwidth}}}$ $\underset{\text{\emph{расшифровка подписи}}}{\underline{\text{Черников И.С.}\hspace{0.04\textwidth}}}$}
     \end{flushleft}\! \! \! \! \! \! \! \!
 
     }}
@@ -246,7 +252,7 @@
 \newpage%\thispagestyle{empty}
 \addtocounter{page}{1}
 \begin{center}
-{\large \textbf{Реферат}}
+{\normalsize \textbf{Реферат}}
 \end{center}
 
 \begin{flushleft}
@@ -270,7 +276,7 @@
 \end{flushleft}
 
 %\normalsize
-\newgeometry{top=15mm, left=30mm, right=15mm, bottom=20mm}
+\newgeometry{top=15mm, left=30mm, right=15mm, bottom=22mm}
 \parindent = 12mm
 
 %\newpage
@@ -302,7 +308,7 @@
 После построения дескриптора трехмерной модели возникает второй этап представленного метода. Сравнение двух интегральных спиновых изображений довольно сложная задача, так как. выделить какой-либо отличительный признак для определенного класса объектов из данных массивов на первый взгляд практически невозможно. Достаточно эффективным инструментом определения более сложных признаков из сырых массивов пикселов в настоящий момент является отдельный тип нейронных сетей, называемых свёрточными. %+
 В настоящий момент над задачей распознавания трехмерных объектов с помощью нейронных сетей работают ученые из Стэнфорда, Принстона и Мюнхенского технического университета. Создаются обширные открытые библиотеки доступных аннотированных трехмерных данных такие как ScanNet или The Princeton Shape Benchmark, которые, в свою очередь, будут использоваться для обучения нейронных сетей.%+
 
-В работе будут подробнее рассмотрены оба этих этапа и приведены результаты применения данного метода для небольшой базы данных трехмерных моделей.
+В работе будут подробнее рассмотрены оба этих этапа и приведены результаты применения данного метода для небольшой базы данных 3D - моделей.
 
 \section{Глобальные дескрипторы поверхности}
 
@@ -698,7 +704,7 @@
 
 \newpage
 
-\section{Реализация системы классификации трехмерных моделей}
+\section{Реализация системы классификации 3D - моделей}
 
 В данном разделе представлена реализация системы классификации трехмерных объектов и результаты ее тестирования.
 
@@ -738,7 +744,7 @@
 
 \begin{figure}[h]
    \begin{center}
-       \includegraphics[scale=0.55] {10.JPG}
+       \includegraphics[scale=0.75] {10.JPG}
        \caption{График изменения значений функции ошибки сверточной нейронной сети, принимающей на вход изображения размером $[32 \times 32 \times 3]$}
        \label{ris:10}
    \end{center}
@@ -769,7 +775,7 @@
 На рисунке \ref{ris:12} представлен график изменения значений функции ошибки для данной реализации системы.
 \begin{figure}[h]
    \begin{center}
-       \includegraphics[scale=0.55] {12.JPG}
+       \includegraphics[scale=0.75] {12.JPG}
        \caption{График изменения значений функции ошибки сверточной нейронной сети, принимающей на вход изображения размером $[28 \times 28]$}
        \label{ris:12}
    \end{center}
