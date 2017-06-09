@@ -79,19 +79,20 @@
 \lstloadlanguages{C,[ANSI]C++,Matlab}%,Clean,make,Fortran}%Загружаемые языки
 \lstset{
   language=C,                % choose the language of the code
-  numbers=left,                   % where to put the line-numbers
+  numbers=none,                   % where to put the line-numbers
   stepnumber=1,                   % the step between two line-numbers.
   numbersep=5pt,                  % how far the line-numbers are from the code
   backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
   showspaces=false,               % show spaces adding particular underscores
   showstringspaces=false,         % underline spaces within strings
   showtabs=false,                 % show tabs within strings adding particular underscores
-  tabsize=2,                      % sets default tabsize to 2 spaces
+  tabsize=1,                      % sets default tabsize to 2 spaces
   captionpos=b,                   % sets the caption-position to bottom
   breaklines=false,                % sets automatic line breaking
   breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
   frame=none,
-  basicstyle=\footnotesize
+  % basicstyle=\footnotesize\
+  basicstyle=\footnotesize\ttfamily,
   %title=\lstname,                 % show the filename of files included with \lstinputlisting;
 }
 
@@ -273,7 +274,7 @@
 
 \vspace{0.5cm}
 
-Объектом исследования являются возможные представления(дескрипторы) трехмерных объектов и технологии сверточных нейронных сетей.
+Объектом исследования являются возможные представления (дескрипторы) трехмерных объектов и технологии сверточных нейронных сетей.
 
 Цель работы - разработка математических методов и алгоритмов классификации трехмерных объектов с помощью сверточных нейронных сетей.
 
@@ -295,7 +296,7 @@
 Здесь возникает потребность классификации моделей для дальнейшего их распознавания или поиска, а именно разработка соответствующей системы обработки баз данных трехмерных моделей. %+
 Разработкой методов и алгоритмов реконструкции и поиска трёхмерных моделей занимаются учёные всего мира: P. Min, M. Kazhdan, S. Rusinkiewicz (Принстон, США), R.C. Veltkamp (Утрехт, Нидерланды), Chi-Chou Kao (Тайнань, Тайвань), группа под управлением Dr.-Ing. Simon Winkelbach (Брауншвейг, Германия).
 
-Модели поиска трёхмерных моделей в крупных базах данных разрабатываются в лабораториях Center for Geometry, Imaging and Virtual Environments (Утрехт, Нидерланды), Laboratoire d'Informatique Fondamentale de Lille(Вильнёв-д’Аск, Франция), Microsoft Research Cambridge (Кембридж, Великобритания), Princeton Shape Retrieval and Analysis Group(Принстон, США).%+
+Модели поиска трёхмерных моделей в крупных базах данных разрабатываются в лабораториях Center for Geometry, Imaging and Virtual Environments (Утрехт, Нидерланды), Laboratoire d'Informatique Fondamentale de Lille \\(Вильнёв-д’Аск, Франция), Microsoft Research Cambridge (Кембридж, Великобритания), Princeton Shape Retrieval and Analysis Group(Принстон, США).%+
 
 В настоящей работе решается задача распознавания трехмерных моделей с использованием технологий глубокого обучения.
 
@@ -360,6 +361,12 @@
 Таким образом, для вычисления спинового изображения используются точки поверхности $S$, ограниченные цилиндром с центром в точке $O$, высотой $\beta_{max} = W_{\beta}b_{\beta}$ и радиусом $\alpha_{max} = W_{\alpha} b_{\alpha}$. В случае спиновых изображений корзины имеют форму трёхмерных колец как показано на рисунке \ref{ris:3}.
 %нр-
 
+Зависимость между значениями относительных координат спинового изображения $\alpha$, $\beta$ и целочисленными координатами (индексами) $i$, $j$ корзин $M_O[i, j]$ приведена ниже:
+
+\begin{equation}
+	i = \left[ \frac{\frac{W_{\beta}}{2} - \beta}{b_{\beta}} \right], \qquad j = \left[ \frac{\alpha}{b_{\alpha}} \right]
+\end{equation}
+
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=0.7]{3.JPG}
@@ -367,13 +374,6 @@
 		\label{ris:3}
 	\end{center}
 \end{figure}
-
-
-Зависимость между значениями относительных координат спинового изображения $\alpha$, $\beta$ и целочисленными координатами (индексами) $i$, $j$ корзин $M_O[i, j]$ приведена ниже:
-
-\begin{equation}
-	i = \left[ \frac{\frac{W_{\beta}}{2} - \beta}{b_{\beta}} \right], \qquad j = \left[ \frac{\alpha}{b_{\alpha}} \right]
-\end{equation}
 
 \subsection{Интегральные спиновые изображения в качестве глобальных \\дескрипторов поверхности}
 
@@ -632,7 +632,7 @@
 
 Свёрточный слой ( англ. Convolutional layer ) является основным строительным блоком сверточной нейронной сети. Параметры слоя состоят из набора фильтров для обучения (или ядер свертки), которые имеют небольшое рецептивное поле, но простираются на всю глубину входной матрицы. В течение прямого прохода каждый фильтр осуществляет свертку по ширине и высоте матрицы на входе, вычисляя скалярное произведение данных фильтра и входа, и формируя двумерную карту активации этого фильтра.
 
-Размерность матрицы на выходе сверточного слоя контролируют три гиперпараметра: глубина(depth), шаг(stride) и нулевое дополнение(zero-padding).
+Размерность матрицы на выходе сверточного слоя контролируют три гиперпараметра: глубина (depth), шаг (stride) и нулевое дополнение (zero-padding).
 
 \begin{enumerate}
 	\item
@@ -868,7 +868,7 @@
 \addcontentsline{toc}{section}{Приложение А Реализация методов edge-split и edge-collapse}
 \section*{Приложение А\\Реализация методов edge-split и edge-collapse}\label{attachA}
 
-В данном приложении приведена реализация методов, которые отвечают за разделение ребер(edge-split) или их уничтожение(edge-collapse), в алгоритме контроля разрешения трехмерных объектов:
+В данном приложении приведена реализация методов, которые отвечают за разделение ребер(edge-split) или их уничтожение(edge-collapse), в алгоритме контроля разрешения трехмерных объектов.
 
 \lstinputlisting[language=C]{attach1.c}
 
